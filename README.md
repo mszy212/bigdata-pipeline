@@ -88,14 +88,13 @@ bash run_pipeline.sh
 
 ```
 bigdata-pipeline/
-├── run_pipeline.sh        # 一键串联全链路
 ├── scripts/
+│   ├── run_pipeline.sh    # 一键串联全链路
 │   ├── gen_orders.py      # 模拟订单生成（埋三类脏数据）
 │   ├── p2_clean.py        # ODS → DWD 清洗（Spark）
-│   └── p3_hbase.py        # DWD → HBase 商品榜单（Spark + happybase）
-├── dashboard/
-│   └── app.py             # Streamlit 看板（读 HBase）
-├── data/                  # 本地中转目录（.gitignore）
+│   ├── p3_hbase.py        # DWD → HBase 商品榜单（Spark + happybase）
+│   └── p4_hbase_tab.py    # Streamlit 看板（读 HBase）
+├── data/                  # 本地中转目录（.gitignore，不入库，运行时自动生成）
 └── README.md
 ```
 
